@@ -27,6 +27,10 @@ public class Rec_MenorElemento {
 		return menor;
 	}
 	
+	public static int encontrarMenorMaior(int[] vetor) {
+		
+	}
+	
 	public static int encontrarMenorRec(int[] vetor, int limInferior, int limSuperior) {
 		
 		if(limInferior == limSuperior) {
@@ -45,6 +49,8 @@ public class Rec_MenorElemento {
 			}
 		}
 	}
+	
+	
 	
 	
 	
