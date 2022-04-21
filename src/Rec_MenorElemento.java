@@ -13,7 +13,7 @@ public class Rec_MenorElemento {
 		}
 		
 		System.out.println(Arrays.toString(vetor));
-		System.out.println(encontrarMenor(vetor));
+		System.out.println("O menor elemento da lista é " + encontrarMenor(vetor));
 
 	}
 	
@@ -26,4 +26,50 @@ public class Rec_MenorElemento {
 		}
 		return menor;
 	}
+	
+	public static int encontrarMenorRec(int[] vetor, int limSuperior, int limInferior) {
+		int menor = vetor[0];
+		if(limSuperior - limInferior <= 1) {
+			if(vetor[limInferior] < vetor[limSuperior]) {
+				menor = vetor[limInferior];
+			}
+			else {
+				menor = vetor[limSuperior];
+			}
+		}
+		return menor;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
