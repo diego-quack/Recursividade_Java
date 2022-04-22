@@ -50,6 +50,10 @@ public class Rec_MenorElemento {
 		menorMaior[1] = menor;
 		System.out.println("Maior elemento:" + maior + " - Menor elemento: " + menor);
 	}
+	
+	public static void encontrarMaiorMenorRec(int[] vetor, int tamanho) {
+		
+	}
 
 	public static int encontrarMenorRec(int[] vetor, int limInferior, int limSuperior) {
 
