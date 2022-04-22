@@ -13,14 +13,15 @@ public class Rec_MenorElemento {
 		}
 
 		System.out.println(Arrays.toString(vetor));
-		for (int i = 0; i < vetor.length; i++) {
-			encontrarMenorMaior(vetor, 0);
-		}
-		System.out.println("O menor elemento da lista é " + encontrarMenorMaior(vetor, 0));
+		encontrarMenorMaior(vetor, vetor.length);
 	}
 	
 	public static void mostrar(int[] vetor) {
-		
+		String dados = "";
+		for(int i = 0; i <= vetor.length; i++) {
+			dados = dados + vetor[i] + ", ";
+			System.out.println(vetor);
+		}
 	}
 
 	public static int encontrarMenor(int[] vetor) {
@@ -33,11 +34,11 @@ public class Rec_MenorElemento {
 		return menor;
 	}
 
-	public static int[] encontrarMenorMaior(int[] vetor, int n) {
+	public static void encontrarMenorMaior(int[] vetor, int tamanho) {
 		
 		int maior = vetor[0];
 		int menor = vetor[0];
-		for (int i = 0; i < n; i++) {
+		for (int i = 0; i < tamanho; i++) {
 			if (vetor[i] > maior) {
 				maior = vetor[i];
 			} else if (vetor[i] < menor) {
@@ -47,8 +48,7 @@ public class Rec_MenorElemento {
 		int[] menorMaior = new int[2];
 		menorMaior[0] = maior;
 		menorMaior[1] = menor;
-
-		return menorMaior;
+		System.out.println("Maior elemento:" + maior + " - Menor elemento: " + menor);
 	}
 
 	public static int encontrarMenorRec(int[] vetor, int limInferior, int limSuperior) {
