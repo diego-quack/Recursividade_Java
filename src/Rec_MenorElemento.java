@@ -18,6 +18,10 @@ public class Rec_MenorElemento {
 		}
 		System.out.println("O menor elemento da lista é " + encontrarMenorMaior(vetor, 0));
 	}
+	
+	public static void mostrar(int[] vetor) {
+		
+	}
 
 	public static int encontrarMenor(int[] vetor) {
 		int menor = vetor[0];
