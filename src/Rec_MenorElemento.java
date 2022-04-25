@@ -23,6 +23,10 @@ public class Rec_MenorElemento {
 			System.out.println(vetor);
 		}
 	}
+	
+	public static int busca(int[] vetor) {
+		
+	}
 
 	public static int encontrarMenor(int[] vetor) {
 		int menor = vetor[0];
