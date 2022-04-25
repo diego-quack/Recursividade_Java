@@ -53,45 +53,40 @@ public class Rec_MenorElemento {
 	
 	public static int[] encontrarMaiorMenorRec(int[] vetor, int limInferior, int limSuperior) {
 		
-		int maior = vetor[0];
-		int menor = vetor[0];
+		int[] menorMaior = new int[2];
 		
 		if(vetor[limInferior] - vetor[limSuperior] <= 1) {
 			if(vetor[limInferior] < vetor[limSuperior]) {
-				menor = vetor[limSuperior];
-				maior = vetor[limInferior];
+				menorMaior[0] = vetor[limSuperior];
+				menorMaior[1] = vetor[limInferior];
 			}
 			else {
-				menor = vetor[limInferior];
-				menor = vetor[limSuperior];
+				menorMaior[0] = vetor[limInferior];
+				menorMaior[1] = vetor[limSuperior];
 			}
 		}
 		else {
 			int meio = (limInferior + limSuperior) / 2;
-			int maiorMenor = encontrarMaiorMenorRec(vetor, limInferior, meio);
+			menorMaior = encontrarMaiorMenorRec(vetor, limInferior, meio);
 			int maiorA = vetor[0];
 			int menorA = vetor[1];
-			int menorMaior = encontrarMaiorMenorRec(vetor, meio + 1, limSuperior);
+			menorMaior = encontrarMaiorMenorRec(vetor, meio + 1, limSuperior);
 			int maiorB = vetor[0];
 			int menorB = vetor[0];
 			
 			if(maiorA > maiorB) {
-				maior = maiorA;
+				menorMaior[0] = maiorA;
 			}
 			else {
-				maior = maiorB;
+				menorMaior[0] = maiorB;
 			}
 			if(menorA < menorB) {
-				menor = menorA;
+				menorMaior[1] = menorA;
 			}
 			else {
-				menor = menorB;
+				menorMaior[1] = menorB;
 			}
 		}
-		int[] menorMaior = new int[2];
-		menorMaior[0] = maior;
-		menorMaior[1] = menor;
-		
 		return menorMaior;
 	}
 
