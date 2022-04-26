@@ -1,10 +1,12 @@
 import java.security.SecureRandom;
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class Rec_MenorElemento {
 
 	public static void main(String[] args) {
 
+		Scanner input = new Scanner(System.in);
 		SecureRandom geradorDeNumeros = new SecureRandom();
 		int[] vetor = new int[10];
 
@@ -13,18 +15,20 @@ public class Rec_MenorElemento {
 		}
 
 		System.out.println(Arrays.toString(vetor));
-		encontrarMenorMaior(vetor, vetor.length);
+		busca(vetor);
+
+		input.close();
 	}
-	
+
 	public static void mostrar(int[] vetor) {
 		String dados = "";
-		for(int i = 0; i <= vetor.length; i++) {
+		for (int i = 0; i <= vetor.length; i++) {
 			dados = dados + vetor[i] + ", ";
 			System.out.println(vetor);
 		}
 	}
 	
-	public static int busca(int[] vetor) {
+	public static void torreDeHanoi(int discos, int origem, int destino, int temporario) {
 		
 	}
 
@@ -39,7 +43,7 @@ public class Rec_MenorElemento {
 	}
 
 	public static void encontrarMenorMaior(int[] vetor, int tamanho) {
-		
+
 		int maior = vetor[0];
 		int menor = vetor[0];
 		for (int i = 0; i < tamanho; i++) {
@@ -54,22 +58,20 @@ public class Rec_MenorElemento {
 		menorMaior[1] = menor;
 		System.out.println("Maior elemento:" + maior + " - Menor elemento: " + menor);
 	}
-	
+
 	public static int[] encontrarMaiorMenorRec(int[] vetor, int limInferior, int limSuperior) {
-		
+
 		int[] menorMaior = new int[2];
-		
-		if(vetor[limInferior] - vetor[limSuperior] <= 1) {
-			if(vetor[limInferior] < vetor[limSuperior]) {
+
+		if (vetor[limInferior] - vetor[limSuperior] <= 1) {
+			if (vetor[limInferior] < vetor[limSuperior]) {
 				menorMaior[0] = vetor[limSuperior];
 				menorMaior[1] = vetor[limInferior];
-			}
-			else {
+			} else {
 				menorMaior[0] = vetor[limInferior];
 				menorMaior[1] = vetor[limSuperior];
 			}
-		}
-		else {
+		} else {
 			int meio = (limInferior + limSuperior) / 2;
 			menorMaior = encontrarMaiorMenorRec(vetor, limInferior, meio);
 			int maiorA = vetor[0];
@@ -77,17 +79,15 @@ public class Rec_MenorElemento {
 			menorMaior = encontrarMaiorMenorRec(vetor, meio + 1, limSuperior);
 			int maiorB = vetor[0];
 			int menorB = vetor[0];
-			
-			if(maiorA > maiorB) {
+
+			if (maiorA > maiorB) {
 				menorMaior[0] = maiorA;
-			}
-			else {
+			} else {
 				menorMaior[0] = maiorB;
 			}
-			if(menorA < menorB) {
+			if (menorA < menorB) {
 				menorMaior[1] = menorA;
-			}
-			else {
+			} else {
 				menorMaior[1] = menorB;
 			}
 		}
