@@ -14,21 +14,26 @@ public class Rec_MenorElemento {
 			vetor[i] = geradorDeNumeros.nextInt(90);
 		}
 
-		System.out.println(Arrays.toString(vetor));
-		busca(vetor);
+		int discoInicial = 1;
+		int discoFinal = 3;
+		int temporario = 2;
+		int totalDeDiscos = 4;
+		
+		torreDeHanoi(totalDeDiscos, discoInicial, discoFinal, temporario);
 
 		input.close();
 	}
-
-	public static void mostrar(int[] vetor) {
-		String dados = "";
-		for (int i = 0; i <= vetor.length; i++) {
-			dados = dados + vetor[i] + ", ";
-			System.out.println(vetor);
-		}
-	}
 	
 	public static void torreDeHanoi(int discos, int origem, int destino, int temporario) {
+		if(discos == 1) {
+			System.out.println(origem + " - " + destino);
+			return;
+		}
+		
+		torreDeHanoi(discos - 1, origem, temporario, destino);
+		System.out.println(origem + " - " + destino);
+		
+		torreDeHanoi(discos - 1, temporario, destino, origem);
 		
 	}
 
